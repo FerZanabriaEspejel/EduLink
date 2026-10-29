@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom"
 
 import Home from "./pages/Home"
@@ -19,6 +18,7 @@ import Settings from "./pages/Settings"
 import HowItWorksPage from "./pages/HowItWorksPage"
 
 import AlgebraBaldor from "./pages/AlgebraBaldor"
+import PuntosYMedallas from "./pages/PuntosYMedallas.jsx" // 👈 1. Importamos la nueva página
 
 
 function AppLayout() {
@@ -29,8 +29,11 @@ function AppLayout() {
     "/",
     "/temario",
     "/comunidad",
+    "/mis-preguntas", // 👈 Ya lo agregamos aquí para que coincida con tu Sidebar
     "/mis-respuestas",
-    "/sos"
+    "/sos",
+    "/baldor",         // 👈 Agregado por si acaso
+    "/puntos"          // 👈 2. Agregamos la ruta de puntos para que muestre el Sidebar
   ]
 
   // Determina si se muestra el Sidebar.
@@ -61,6 +64,9 @@ function AppLayout() {
           <Route path="/como-funciona" element={<HowItWorksPage />} />
 
           <Route path="/baldor" element={<AlgebraBaldor />} />
+          
+          {/* 👈 3. Declaramos la ruta de Puntos y Medallas */}
+          <Route path="/puntos" element={<PuntosYMedallas />} />
         </Routes>
       </main>
     </div>

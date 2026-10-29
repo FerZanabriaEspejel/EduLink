@@ -23,7 +23,7 @@ function Sidebar() {
       {/* Fondo oscuro traslúcido cuando el menú se abre en móvil */}
       {isOpen && <div className="sidebar-overlay" onClick={closeSidebar}></div>}
 
-      {/* Sidebar original con la clase condicional is-open */}
+      {/* Sidebar con la clase condicional is-open */}
       <aside className={`sidebar ${isOpen ? "is-open" : ""}`}>
 
         {/* LOGO */}
@@ -55,7 +55,6 @@ function Sidebar() {
             Temario
           </NavLink>
 
-          {/* Enlace directo a Baldor por si lo usas */}
           <NavLink to="/baldor" onClick={closeSidebar} className="menu-item">
             <span>📐</span>
             Álgebra de Baldor
