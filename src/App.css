@@ -1,0 +1,901 @@
+
+/* =========================================
+   1. CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-width: 320px;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #1f2937;
+  background: #f8f8fc;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* =========================================
+   2. ESTRUCTURA PRINCIPAL DE EDULINK
+========================================= */
+
+.app-layout {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Páginas con menú lateral */
+
+.app-layout.con-sidebar {
+  display: grid;
+  grid-template-columns: 270px minmax(0, 1fr);
+  align-items: stretch;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Páginas sin menú lateral */
+
+.app-layout.sin-sidebar {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+/* Área de navegación lateral */
+
+.app-layout.con-sidebar > aside,
+.app-layout.con-sidebar > .sidebar {
+  grid-column: 1;
+  min-width: 0;
+}
+
+/* Área principal de las páginas */
+
+.app-layout .main-content {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app-layout.con-sidebar > .main-content {
+  grid-column: 2;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.app-layout.sin-sidebar > .main-content {
+  display: block;
+  grid-column: auto;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================================
+   3. PÁGINA DE INICIO
+========================================= */
+
+.home {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 48px;
+  color: #1f2937;
+  background: linear-gradient(
+    135deg,
+    #f8f8fa 0%,
+    #ffffff 50%,
+    #f1edff 100%
+  );
+}
+
+.welcome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 56px;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 600px;
+  margin: 0 auto;
+}
+
+.welcome > div,
+.welcome > section {
+  flex: 1;
+  min-width: 0;
+}
+
+.welcome h1 {
+  margin: 0 0 24px;
+  color: #1f2937;
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+}
+
+.welcome h2 {
+  margin: 0 0 16px;
+  color: #1f2937;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1.25;
+}
+
+.welcome p {
+  color: #6b7280;
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+.welcome img {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+/* Enlaces y botones dentro de Inicio */
+
+.home a {
+  text-decoration: none;
+}
+
+.home button {
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.home button:hover {
+  transform: translateY(-2px);
+}
+
+/* Tarjetas de Inicio */
+
+.home .card,
+.home .feature-card,
+.home .home-card {
+  min-width: 0;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #eeeaf8;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(31, 41, 55, 0.06);
+}
+
+/* =========================================
+   4. ÁLGEBRA DE BALDOR
+========================================= */
+
+.app-layout.sin-sidebar .baldor-container {
+  display: block;
+  width: 100%;
+  max-width: 1450px;
+  min-width: 0;
+  margin: 0 auto;
+  padding: 32px 28px;
+  box-sizing: border-box;
+}
+
+.baldor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  margin-bottom: 28px;
+  padding: 32px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #4338ca 0%, #7c3aed 100%);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(67, 56, 202, 0.15);
+}
+
+.baldor-header > div:first-child {
+  flex: 1;
+  min-width: 0;
+}
+
+.baldor-header h1 {
+  margin: 0 0 10px;
+  font-size: 2rem;
+  line-height: 1.25;
+}
+
+.baldor-header p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.user-stats-badge {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  max-width: 100%;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stat-icon {
+  font-size: 1.5rem;
+}
+
+.stat-item strong {
+  display: block;
+  font-size: 1rem;
+}
+
+.stat-item small {
+  display: block;
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
+.baldor-layout {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
+  width: 100%;
+  min-width: 0;
+}
+
+.baldor-sidebar {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: fit-content;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+}
+
+.baldor-sidebar h3 {
+  margin: 0 0 18px;
+  color: #111827;
+  font-size: 1.1rem;
+}
+
+.topic-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.topic-list li {
+  width: 100%;
+  min-width: 0;
+}
+
+.topic-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  color: #4b5563;
+  text-align: left;
+  overflow-wrap: anywhere;
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.topic-btn:hover {
+  color: #111827;
+  background: #f3f4f6;
+}
+
+.topic-btn.active {
+  color: #4338ca;
+  font-weight: 600;
+  background: #e0e7ff;
+}
+
+.baldor-content {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  padding: 32px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+}
+
+.tab-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.tab-btn {
+  padding: 10px 16px;
+  color: #6b7280;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.tab-btn:hover {
+  color: #4338ca;
+  background: #f5f3ff;
+}
+
+.tab-btn.active {
+  color: #ffffff;
+  background: #4338ca;
+}
+
+.theory-section,
+.practice-section {
+  width: 100%;
+  min-width: 0;
+}
+
+.theory-section h2 {
+  margin: 0 0 12px;
+  color: #111827;
+  font-size: 1.65rem;
+  line-height: 1.35;
+}
+
+.topic-description {
+  margin: 0 0 20px;
+  color: #6b7280;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.theory-box {
+  width: 100%;
+  min-width: 0;
+}
+
+.theory-box pre {
+  width: 100%;
+  max-width: 100%;
+  margin: 20px 0;
+  padding: 24px;
+  color: #374151;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: #f9fafb;
+  border-left: 4px solid #4338ca;
+  border-radius: 12px;
+}
+
+.primary-action-btn,
+.submit-quiz-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  padding: 12px 24px;
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+  overflow-wrap: anywhere;
+  background: #4338ca;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.primary-action-btn:hover,
+.submit-quiz-btn:hover {
+  background: #3730a3;
+}
+
+.submit-quiz-btn:disabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   5. EJERCICIOS Y RESULTADOS
+========================================= */
+
+.question-card {
+  width: 100%;
+  min-width: 0;
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.question-card h4 {
+  margin: 0 0 16px;
+  color: #1f2937;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+}
+
+.option-btn {
+  width: 100%;
+  min-width: 0;
+  padding: 14px;
+  color: #374151;
+  font-size: 0.95rem;
+  text-align: left;
+  overflow-wrap: anywhere;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.option-btn:hover {
+  border-color: #4338ca;
+}
+
+.option-btn.selected {
+  font-weight: 600;
+  background: #e0e7ff;
+  border-color: #4338ca;
+}
+
+.option-btn.correct {
+  color: #065f46;
+  background: #d1fae5 !important;
+  border-color: #10b981 !important;
+}
+
+.option-btn.wrong {
+  color: #991b1b;
+  background: #fee2e2 !important;
+  border-color: #ef4444 !important;
+}
+
+.explanation-box {
+  margin-top: 16px;
+  padding: 16px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  border-radius: 10px;
+}
+
+.correct-exp {
+  color: #065f46;
+  background: #ecfdf5;
+}
+
+.wrong-exp {
+  color: #991b1b;
+  background: #fef2f2;
+}
+
+.results-summary {
+  width: 100%;
+  margin: 24px 0;
+  padding: 24px;
+  text-align: center;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+.medal-alert {
+  margin: 16px 0;
+  padding: 14px;
+  color: #92400e;
+  font-weight: 500;
+  background: #fef3c7;
+  border-radius: 8px;
+}
+
+.reset-quiz-btn {
+  padding: 10px 20px;
+  color: #ffffff;
+  background: #64748b;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.reset-quiz-btn:hover {
+  background: #475569;
+}
+
+/* =========================================
+   6. TABLET
+========================================= */
+
+@media (max-width: 1024px) {
+  .home {
+    padding: 40px 28px;
+  }
+
+  .welcome {
+    gap: 36px;
+  }
+
+  .app-layout.sin-sidebar .baldor-container {
+    padding: 24px;
+  }
+
+  .baldor-layout {
+    grid-template-columns: 230px minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .baldor-content {
+    padding: 24px;
+  }
+
+  .baldor-header {
+    padding: 24px;
+  }
+}
+
+/* =========================================
+   7. MÓVILES
+========================================= */
+
+@media (max-width: 768px) {
+  .app-layout.con-sidebar {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .app-layout.con-sidebar > .main-content {
+    grid-column: 1;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .home {
+    padding: 28px 18px;
+  }
+
+  .welcome {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 28px;
+    min-height: auto;
+  }
+
+  .welcome h1 {
+    font-size: 2.2rem;
+    letter-spacing: -0.8px;
+  }
+
+  .welcome p {
+    font-size: 1rem;
+  }
+
+  .welcome img {
+    max-width: 420px;
+  }
+
+  .app-layout.sin-sidebar .baldor-container {
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    padding: 18px 14px;
+  }
+
+  .baldor-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    padding: 22px;
+    border-radius: 16px;
+  }
+
+  .baldor-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .user-stats-badge {
+    justify-content: flex-start;
+  }
+
+  .baldor-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .baldor-sidebar {
+    padding: 18px;
+  }
+
+  .baldor-content {
+    padding: 20px 16px;
+    border-radius: 14px;
+  }
+
+  .tab-navigation {
+    gap: 8px;
+  }
+
+  .tab-btn {
+    padding: 10px 12px;
+    font-size: 0.88rem;
+  }
+
+  .theory-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .theory-box pre {
+    padding: 16px;
+    font-size: 0.95rem;
+  }
+
+  .options-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* =========================================
+   8. MÓVILES PEQUEÑOS
+========================================= */
+
+@media (max-width: 420px) {
+  .app-layout.sin-sidebar .baldor-container {
+    padding: 12px 10px;
+  }
+
+  .home {
+    padding: 20px 14px;
+  }
+
+  .baldor-header {
+    padding: 18px;
+  }
+
+  .baldor-header h1 {
+    font-size: 1.4rem;
+  }
+
+  .baldor-content {
+    padding: 16px 12px;
+  }
+
+  .tab-navigation {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tab-btn {
+    width: 100%;
+  }
+
+  .primary-action-btn,
+  .submit-quiz-btn {
+    width: 100%;
+  }
+}
+
+
+/* =========================================
+   RESTAURAR TARJETAS Y BOTONES DE INICIO
+========================================= */
+
+/* Contenedor de bienvenida */
+.home .welcome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 600px;
+  margin: 0 auto;
+}
+
+/* Columnas del contenido */
+.home .welcome > div,
+.home .welcome > section {
+  min-width: 0;
+}
+
+/* Tarjeta principal de texto */
+.home .welcome > div:first-child,
+.home .welcome > section:first-child {
+  flex: 1;
+  padding: 36px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #eee8ff;
+  border-radius: 24px;
+  box-shadow: 0 12px 35px rgba(76, 29, 149, 0.09);
+}
+
+/* Título de bienvenida */
+.home .welcome h1 {
+  margin: 0 0 22px;
+  color: #241c3d;
+  font-size: clamp(2rem, 4vw, 3.3rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+/* Texto de bienvenida */
+.home .welcome p {
+  margin: 0 0 24px;
+  color: #625b71;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* Botones de Inicio: recuperar su apariencia */
+.home .welcome a,
+.home .welcome button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  margin: 6px 8px 6px 0;
+  padding: 13px 22px;
+  color: #ffffff;
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  background: linear-gradient(135deg, #6d4aff, #8b5cf6);
+  border: 1px solid transparent;
+  border-radius: 12px;
+  box-shadow: 0 5px 14px rgba(109, 74, 255, 0.2);
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Hover de los botones */
+.home .welcome a:hover,
+.home .welcome button:hover {
+  color: #ffffff;
+  background: linear-gradient(135deg, #5735db, #7c3aed);
+  box-shadow: 0 8px 20px rgba(109, 74, 255, 0.28);
+  transform: translateY(-2px);
+}
+
+/* Segundo botón: Cómo funciona */
+.home .welcome a:nth-of-type(2),
+.home .welcome button:nth-of-type(2) {
+  color: #6844dc;
+  background: #ffffff;
+  border-color: #d9ccff;
+  box-shadow: none;
+}
+
+.home .welcome a:nth-of-type(2):hover,
+.home .welcome button:nth-of-type(2):hover {
+  color: #5735db;
+  background: #f4f0ff;
+  border-color: #bba7ff;
+}
+
+/* Tarjeta o imagen ilustrativa del lado derecho */
+.home .welcome > div:last-child,
+.home .welcome > section:last-child {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Imágenes de bienvenida */
+.home .welcome img {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 768px) {
+  .home .welcome {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+    min-height: auto;
+  }
+
+  .home .welcome > div:first-child,
+  .home .welcome > section:first-child {
+    padding: 24px;
+  }
+
+  .home .welcome a,
+  .home .welcome button {
+    width: 100%;
+    margin: 6px 0;
+  }
+}

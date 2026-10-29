@@ -1,0 +1,105 @@
+/* Estilos lindos y profesionales para Preliminares de Baldor */
+
+.preliminares-container {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #1f2937;
+  line-height: 1.75;
+  font-size: 1.05rem;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+}
+
+/* Encabezados principales */
+.preliminares-container h3.section-title {
+  color: #1e40af;
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e0e7ff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.preliminares-container h3.section-title::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 1.2rem;
+  background-color: #3b82f6;
+  border-radius: 3px;
+}
+
+/* Párrafos e introducción */
+.preliminares-container p {
+  margin-bottom: 1.25rem;
+  color: #374151;
+}
+
+.preliminares-container strong {
+  color: #111827;
+}
+
+/* Listas estilizadas */
+.preliminares-container ul.styled-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+}
+
+.preliminares-container ul.styled-list > li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #374151;
+}
+
+.preliminares-container ul.styled-list > li::before {
+  content: "•";
+  color: #3b82f6;
+  font-weight: bold;
+  font-size: 1.3rem;
+  position: absolute;
+  left: 0.25rem;
+  top: -0.1rem;
+}
+
+/* Sub-listas */
+.preliminares-container ul.sub-list {
+  list-style-type: circle;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Tarjetas de ejemplos (fórmulas) */
+.preliminares-container .example-card {
+  background-color: #f8fafc;
+  border-left: 4px solid #3b82f6;
+  padding: 1rem 1.25rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+  margin: 1.25rem 0;
+}
+
+.preliminares-container .formula-display {
+  display: block;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  background-color: #eff6ff;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+  letter-spacing: 0.5px;
+}
+
+/* Separadores */
+.preliminares-container hr.divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #e5e7eb, transparent);
+  margin: 2.5rem 0;
+}
