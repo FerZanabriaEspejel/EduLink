@@ -1,21 +1,134 @@
 /* ==========================================
-   ADAPTACIÓN RESPONSIVE PARA MÓVILES (< 768px)
+   ESTILOS GENERALES (Escritorio / Por defecto)
    ========================================== */
+.sidebar {
+  width: 260px;
+  background-color: #ffffff;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+  overflow-y: auto; /* Por si el contenido es largo en pantallas chicas */
+}
 
-/* Elementos móviles ocultos por defecto en computadoras */
+/* Estilos internos del logo y menús (ajusta según tus clases actuales si las tienes) */
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 2rem;
+}
+
+.logo-icon {
+  background-color: #7c3aed;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-grow: 1;
+}
+
+.menu-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #94a3b8;
+  margin-top: 1.2rem;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.05em;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: #475569;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+
+.menu-item:hover, .menu-item.active {
+  background-color: #f1f5f9;
+  color: #7c3aed;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1rem;
+}
+
+.help-card {
+  background: #f8fafc;
+  padding: 12px;
+  border-radius: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.user-mini {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-avatar {
+  background: #e2e8f0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #475569;
+}
+
+/* ==========================================
+   ELEMENTOS MÓVILES OCULTOS EN ESCRITORIO
+   ========================================== */
 .mobile-menu-toggle,
 .sidebar-overlay {
   display: none;
 }
 
+
+/* ==========================================
+   ADAPTACIÓN RESPONSIVE PARA MÓVILES (< 768px)
+   ========================================== */
 @media (max-width: 768px) {
+  
   /* Botón de menú hamburguesa flotante arriba a la izquierda */
   .mobile-menu-toggle {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 6px;
     position: fixed;
     top: 1rem;
     left: 1rem;
-    z-index: 110; /* Arriba de todo */
+    z-index: 1110; /* Arriba de todo */
     background-color: #7c3aed; /* Color morado de tu marca */
     color: #ffffff;
     border: none;
@@ -27,12 +140,13 @@
     box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
   }
 
-  /* El sidebar se oculta por completo fuera de la pantalla a la izquierda */
+  /* El sidebar se oculta por completo fuera de la pantalla a la izquierda sin dejar espacios vacíos */
   .sidebar {
     transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
-    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.1);
-    z-index: 105;
+    width: 280px;
+    height: 100vh;
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.15);
+    z-index: 1105;
   }
 
   /* Cuando se abre, se desliza suavemente hacia la pantalla */
@@ -46,6 +160,7 @@
     position: fixed;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.4);
-    z-index: 100;
+    backdrop-filter: blur(2px);
+    z-index: 1100;
   }
 }
