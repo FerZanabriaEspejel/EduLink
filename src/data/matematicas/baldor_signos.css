@@ -1,0 +1,44 @@
+/* Estilos dedicados para Signos, Operaciones y Coeficientes de Baldor */
+.preliminares-container {
+  font-family: inherit;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.preliminares-container .section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.preliminares-container p {
+  margin-bottom: 1rem;
+  color: #4b5563;
+}
+
+.preliminares-container .divider {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 1.5rem 0;
+}
+
+.preliminares-container .styled-list {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.preliminares-container .styled-list li {
+  margin-bottom: 0.75rem;
+  color: #4b5563;
+}
+
+.preliminares-container .example-card {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
