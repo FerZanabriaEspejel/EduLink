@@ -1,4 +1,4 @@
-import "../../pages/baldor_signos.css"; // Importamos su CSS dedicado
+import "./baldor_signos.css";
 
 export const baldorSignos = {
   id: "baldor-signos-y-coeficientes",
