@@ -1,11 +1,17 @@
 import { useState, useEffect } from "react"
+import { useParams, useNavigate } from "react-router-dom"
 import { supabase } from "../supabase"
-import { baldorTopics } from "../data/baldorIndex" // <-- Solo esta debe quedar
+import { baldorTopics } from "../data/baldorIndex"
 import "./AlgebraBaldor.css"
 
-
 function AlgebraBaldor() {
-  const [selectedTopic, setSelectedTopic] = useState(baldorTopics[0])
+  const { topicId } = useParams() // Captura el ID de la URL si se accede desde el temario
+  const navigate = useNavigate()
+
+  // Buscar el tema activo por la URL o tomar el primero por defecto
+  const initialTopic = baldorTopics.find(t => t.id === topicId) || baldorTopics[0]
+
+  const [selectedTopic, setSelectedTopic] = useState(initialTopic)
   const [activeTab, setActiveTab] = useState("theory") // "theory" o "practice"
   const [selectedAnswers, setSelectedAnswers] = useState({})
   const [submitted, setSubmitted] = useState(false)
@@ -19,6 +25,17 @@ function AlgebraBaldor() {
   useEffect(() => {
     fetchProfile()
   }, [])
+
+  // Sincronizar el tema seleccionado si cambia el parámetro de la URL
+  useEffect(() => {
+    if (topicId) {
+      const found = baldorTopics.find(t => t.id === topicId)
+      if (found) {
+        setSelectedTopic(found)
+        handleResetQuiz()
+      }
+    }
+  }, [topicId])
 
   const fetchProfile = async () => {
     const { data: { user } } = await supabase.auth.getUser()
@@ -129,7 +146,7 @@ function AlgebraBaldor() {
                 <button
                   className={`topic-btn ${selectedTopic.id === topic.id ? "active" : ""}`}
                   onClick={() => {
-                    setSelectedTopic(topic)
+                    navigate(`/baldor/${topic.id}`)
                     setActiveTab("theory")
                     handleResetQuiz()
                   }}
@@ -165,7 +182,12 @@ function AlgebraBaldor() {
               <h2>{selectedTopic.title}</h2>
               <p className="topic-description">{selectedTopic.description}</p>
               <div className="theory-box">
-                <pre>{selectedTopic.theory}</pre>
+                {/* Si la teoría es un elemento JSX renderiza directo, si es texto usa pre */}
+                {typeof selectedTopic.theory === "object" ? (
+                  selectedTopic.theory
+                ) : (
+                  <pre>{selectedTopic.theory}</pre>
+                )}
               </div>
               <button 
                 className="primary-action-btn"
