@@ -12,7 +12,7 @@ const materias = [
     descripcion: "Álgebra, ecuaciones y razonamiento matemático.",
     temas: [
       { id: "concepto1", nombre: "Concepto a Punto 4", esInteractivo: true },
-      { id: "expresiones", nombre: "Expresiones algebraicas", esInteractivo: false },
+      { id: "baldor-signos-y-coeficientes", nombre: "5 al 9. Signos, Operaciones, Coeficientes y Agrupación", esInteractivo: true },
       { id: "ecuaciones", nombre: "Ecuaciones y Desigualdades", esInteractivo: false },
       { id: "funciones", nombre: "Funciones y Gráficas", esInteractivo: false },
     ],
