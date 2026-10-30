@@ -1,9 +1,11 @@
 import { preliminares } from "./matematicas/baldor_preliminares.jsx";
 import { baldorSignos } from "./matematicas/baldor_signos.jsx";
-import { baldorCantidades } from "./matematicas/baldor_cantidades.jsx"; // <-- 1. Importamos el nuevo tema
+import { baldorCantidades } from "./matematicas/baldor_cantidades.jsx"; 
+import { baldorValorAbsoluto } from "./matematicas/baldor_valor_absoluto.jsx";
 
 export const baldorTopics = [
   preliminares,
   baldorSignos,
-  baldorCantidades // <-- 2. Lo agregamos al arreglo principal
+  baldorCantidades,
+  baldorValorAbsoluto
 ];
