@@ -13,8 +13,8 @@ const materias = [
     temas: [
       { id: "baldor-preliminares", nombre: "Concepto a Punto 4", esInteractivo: true },
       { id: "baldor-signos-y-coeficientes", nombre: "Puntos 5 al 9", esInteractivo: true },
-      { id: "baldor-cantidades-positivas-negativas", nombre: "Puntos 10 al 13", esInteractivo: true }, // <-- Nuevo tema
-      { id: "baldor-valor-absoluto-y-aritmeticas", nombre: "Puntos 14 al 16", esInteractivo: false },
+      { id: "baldor-cantidades-positivas-negativas", nombre: "Puntos 10 al 13", esInteractivo: true }, 
+      { id: "baldor-valor-absoluto-y-aritmeticas", nombre: "Puntos 14 al 16", esInteractivo: true },
       { id: "funciones", nombre: "Funciones y Gráficas", esInteractivo: false },
     ],
   },
