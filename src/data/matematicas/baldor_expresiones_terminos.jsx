@@ -2,7 +2,7 @@ import "./baldor_expresiones_terminos.css"; // Importamos su CSS dedicado
 
 export const baldorExpresionesTerminos = {
   id: "baldor-expresiones-y-terminos",
-  title: "17 al 20. Expresión Algebraica, Términos y Clases",
+  title: "Puntos 17 al 20",
   description: "Estudio de las expresiones algebraicas, elementos de un término (nomenclatura, signo, coeficiente, parte literal, grado) y clasificación de términos.",
   theory: 
     <div class="preliminares-container">
