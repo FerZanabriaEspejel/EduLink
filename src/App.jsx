@@ -64,6 +64,7 @@ function AppLayout() {
           <Route path="/como-funciona" element={<HowItWorksPage />} />
 
           <Route path="/baldor" element={<AlgebraBaldor />} />
+          <Route path="/baldor/:topicId" element={<AlgebraBaldor />} />
           
           {/* 👈 3. Declaramos la ruta de Puntos y Medallas */}
           <Route path="/puntos" element={<PuntosYMedallas />} />
@@ -72,6 +73,7 @@ function AppLayout() {
     </div>
   )
 }
+
 
 
 function App() {
