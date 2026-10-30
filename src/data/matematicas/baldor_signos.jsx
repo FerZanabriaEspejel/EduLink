@@ -2,7 +2,7 @@ import "./baldor_signos.css";
 
 export const baldorSignos = {
   id: "baldor-signos-y-coeficientes",
-  title: "5 al 9. Signos, Operaciones, Coeficientes y Agrupación",
+  title: "Puntos 5 al 9",
   description: "Estudio detallado de los signos de operación, relación y agrupación, así como los coeficientes y exponentes en el Álgebra de Baldor.",
   theory: 
     <div className="preliminares-container">
