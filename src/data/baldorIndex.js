@@ -1,7 +1,9 @@
 import { preliminares } from "./matematicas/baldor_preliminares.jsx";
-import { baldorSignos } from "./matematicas/baldor_signos.jsx"; // 1. Importamos el nuevo módulo de los puntos 5 al 9
+import { baldorSignos } from "./matematicas/baldor_signos.jsx";
+import { baldorCantidades } from "./matematicas/baldor_cantidades.jsx"; // <-- 1. Importamos el nuevo tema
 
 export const baldorTopics = [
   preliminares,
-  baldorSignos // 2. Lo añadimos al listado principal de temas de Baldor
+  baldorSignos,
+  baldorCantidades // <-- 2. Lo agregamos al arreglo principal
 ];
