@@ -11,8 +11,8 @@ const materias = [
     icono: "📐",
     descripcion: "Álgebra, ecuaciones y razonamiento matemático.",
     temas: [
-      { id: "concepto1", nombre: "Concepto a Punto 4", esInteractivo: true },
-      { id: "baldor-signos-y-coeficientes", nombre: "Punto 5 al 9", esInteractivo: true },
+      { id: "baldor-preliminares", nombre: "Concepto a Punto 4", esInteractivo: true },
+      { id: "baldor-signos-y-coeficientes", nombre: "Puntos 5 al 9", esInteractivo: true },
       { id: "ecuaciones", nombre: "Ecuaciones y Desigualdades", esInteractivo: false },
       { id: "funciones", nombre: "Funciones y Gráficas", esInteractivo: false },
     ],
@@ -103,8 +103,9 @@ function Temario() {
 
   // Función para manejar el clic en un tema individual
   const handleTemaClick = (tema) => {
-    if (tema.id === "baldor" || tema.esInteractivo) {
-      navigate("/baldor") // Redirige al módulo interactivo de Baldor
+    if (tema.esInteractivo) {
+      // Redirige al módulo interactivo de Baldor pasando el ID del tema específico
+      navigate(`/baldor/${tema.id}`)
     }
   }
 

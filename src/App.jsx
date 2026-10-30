@@ -18,26 +18,27 @@ import Settings from "./pages/Settings"
 import HowItWorksPage from "./pages/HowItWorksPage"
 
 import AlgebraBaldor from "./pages/AlgebraBaldor"
-import PuntosYMedallas from "./pages/PuntosYMedallas.jsx" // 👈 1. Importamos la nueva página
-
+import PuntosYMedallas from "./pages/PuntosYMedallas.jsx"
 
 function AppLayout() {
   const location = useLocation()
 
-  // Rutas donde debe aparecer el Sidebar.
+  // Rutas donde debe aparecer el Sidebar (incluyendo las variantes con :topicId para Baldor).
   const rutasConSidebar = [
     "/",
     "/temario",
     "/comunidad",
-    "/mis-preguntas", // 👈 Ya lo agregamos aquí para que coincida con tu Sidebar
+    "/mis-preguntas",
     "/mis-respuestas",
     "/sos",
-    "/baldor",         // 👈 Agregado por si acaso
-    "/puntos"          // 👈 2. Agregamos la ruta de puntos para que muestre el Sidebar
+    "/baldor",
+    "/puntos"
   ]
 
-  // Determina si se muestra el Sidebar.
-  const mostrarSidebar = rutasConSidebar.includes(location.pathname)
+  // Determina si se muestra el Sidebar validando rutas exactas o dinámicas que empiezan con /baldor/
+  const mostrarSidebar = 
+    rutasConSidebar.includes(location.pathname) || 
+    location.pathname.startsWith("/baldor/")
 
   return (
     <div
@@ -66,15 +67,12 @@ function AppLayout() {
           <Route path="/baldor" element={<AlgebraBaldor />} />
           <Route path="/baldor/:topicId" element={<AlgebraBaldor />} />
           
-          {/* 👈 3. Declaramos la ruta de Puntos y Medallas */}
           <Route path="/puntos" element={<PuntosYMedallas />} />
         </Routes>
       </main>
     </div>
   )
 }
-
-
 
 function App() {
   return (
