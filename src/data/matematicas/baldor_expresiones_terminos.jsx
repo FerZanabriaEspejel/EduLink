@@ -4,7 +4,7 @@ export const baldorExpresionesTerminos = {
   id: "baldor-expresiones-y-terminos",
   title: "17 al 20. Expresión Algebraica, Términos y Clases",
   description: "Estudio de las expresiones algebraicas, elementos de un término (nomenclatura, signo, coeficiente, parte literal, grado) y clasificación de términos.",
-  theory: `
+  theory: 
     <div class="preliminares-container">
       
       <h3 class="section-title">17. EXPRESIÓN ALGEBRAICA</h3>
@@ -12,14 +12,14 @@ export const baldorExpresionesTerminos = {
         Es la representación de un símbolo algebraico o de una o más operaciones algebraicas.
       </p>
       <div class="example-card">
-        <p><strong>Ejemplos:</strong> <code>a</code>, <code>5x</code>, <code>\\( \\sqrt{4a} \\)</code>, <code>(a + b)c</code>, <code>(5x - 3y)a</code>.</p>
+        <p><strong>Ejemplos:</strong> <code>a</code>, <code>5x</code>, <code>√(4a)</code>, <code>(a + b)c</code>, <code>(5x - 3y)a</code>.</p>
       </div>
 
       <hr class="divider" />
 
       <h3 class="section-title">18. TÉRMINO Y NOMENCLATURA ALGEBRAICA</h3>
       <p>
-        <strong>Término</strong> es una expresión algebraica que consta de un solo símbolo o de varios símbolos no separados entre sí por el signo <code>+</code> o <code>-</code>. (Ej. <code>a</code>, <code>3b</code>, <code>2xy</code>, <code>\\( \\frac{4a}{3x} \\)</code>).
+        <strong>Término</strong> es una expresión algebraica que consta de un solo símbolo o de varios símbolos no separados entre sí por el signo <code>+</code> o <code>-</code>. (Ej. <code>a</code>, <code>3b</code>, <code>2xy</code>, <code>4a / 3x</code>).
       </p>
       <p>
         <strong>Elementos de un término:</strong> Son cuatro: el <em>signo</em>, el <em>coeficiente</em>, la <em>parte literal</em> y el <em>grado</em>.
@@ -44,15 +44,15 @@ export const baldorExpresionesTerminos = {
       <h3 class="section-title">20. CLASES DE TÉRMINOS</h3>
       <ul class="styled-list">
         <li><strong>Entero:</strong> El que no tiene denominador literal (ej. <code>5a</code>, <code>6a⁴b³</code>).</li>
-        <li><strong>Fraccionario:</strong> El que tiene denominador literal (ej. <code>\\( \\frac{2a}{3b} \\)</code>).</li>
+        <li><strong>Fraccionario:</strong> El que tiene denominador literal (ej. <code>2a / 3b</code>).</li>
         <li><strong>Racional:</strong> El que no tiene radical (ej. los anteriores).</li>
-        <li><strong>Irracional:</strong> El que tiene radical (ej. <code>\\( \\sqrt{ab} \\)</code>, <code>3\\sqrt{b}</code>).</li>
+        <li><strong>Irracional:</strong> El que tiene radical (ej. <code>√(ab)</code>, <code>3√(b)</code>).</li>
         <li><strong>Homogéneos:</strong> Los que tienen el mismo grado absoluto (ej. <code>4x⁴y</code> y <code>6x²y³</code>, ambos de 5° grado).</li>
         <li><strong>Heterogéneos:</strong> Los de distinto grado absoluto.</li>
       </ul>
 
     </div>
-  `,
+  ,
   exercises: [
     {
       id: 1,
