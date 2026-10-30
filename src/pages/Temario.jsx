@@ -15,7 +15,7 @@ const materias = [
       { id: "baldor-signos-y-coeficientes", nombre: "Puntos 5 al 9", esInteractivo: true },
       { id: "baldor-cantidades-positivas-negativas", nombre: "Puntos 10 al 13", esInteractivo: true }, 
       { id: "baldor-valor-absoluto-y-aritmeticas", nombre: "Puntos 14 al 16", esInteractivo: true },
-      { id: "funciones", nombre: "Funciones y Gráficas", esInteractivo: false },
+      { id: "baldor-expresiones-y-terminos", nombre: "Puntos 17 al 20", esInteractivo: true },
     ],
   },
   {
