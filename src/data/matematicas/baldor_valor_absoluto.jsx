@@ -2,7 +2,7 @@ import "./baldor_valor_absoluto.css"; // Importamos su CSS dedicado
 
 export const baldorValorAbsoluto = {
   id: "baldor-valor-absoluto-y-aritmeticas",
-  title: "14 al 16. Valor Absoluto, Relativo y Representación Gráfica",
+  title: "Puntos 14 al 16",
   description: "Estudio del valor absoluto y relativo, diferencia entre cantidades aritméticas y algebraicas, y la representación gráfica en la recta numérica.",
   theory: 
     <div class="preliminares-container">
