@@ -75,41 +75,49 @@ function Register() {
 
     setLoading(true)
 
-    try {
-      // 1. Crear usuario en Supabase Auth
-      const { data: authData, error: authError } = await supabase.auth.signUp({
-        email: formData.email,
-        password: formData.password,
-      })
+    
+try {
+  // 1. Crear usuario y enviar sus datos al registro de Supabase
+  const { data: authData, error: authError } =
+    await supabase.auth.signUp({
+      email: formData.email,
+      password: formData.password,
 
-      if (authError) throw authError
-
-      if (authData.user) {
-        // 2. Guardar el perfil extendido en la tabla 'profiles'
-        const { error: profileError } = await supabase.from("profiles").insert([
-          {
-            id: authData.user.id,
-            full_name: formData.fullName,
-            username: formData.username,
-            institution: formData.institution,
-            educational_level: formData.educationalLevel,
-            grade_semester: formData.gradeSemester,
-            subjects: selectedSubjects,
-            points: 100, // Puntos iniciales de bienvenida
-            level: 1
-          }
-        ])
-
-        if (profileError) throw profileError
-
-        // Redirigir al inicio o dashboard tras éxito
-        navigate("/")
+      options: {
+        data: {
+          full_name: formData.fullName.trim(),
+          username: formData.username.trim(),
+          institution: formData.institution,
+          educational_level: formData.educationalLevel,
+          grade_semester: formData.gradeSemester,
+          subjects: selectedSubjects
+        }
       }
-    } catch (err) {
-      setError(err.message || "Ocurrió un error al crear la cuenta.")
-    } finally {
-      setLoading(false)
+    });
+
+  if (authError) throw authError;
+
+  if (authData.user) {
+
+    // El trigger de Supabase crea automáticamente:
+    // 1. El perfil del estudiante.
+    // 2. Sus estadísticas iniciales.
+
+    if (authData.session) {
+      navigate("/");
+    } else {
+      setError(
+        "¡Cuenta creada! Revisa tu correo para confirmar tu registro."
+      );
     }
+  }
+
+} catch (err) {
+  console.error("Error al registrar usuario:", err);
+  setError(err.message || "Ocurrió un error al crear la cuenta.");
+} finally {
+  setLoading(false);
+}
   }
 
   return (
